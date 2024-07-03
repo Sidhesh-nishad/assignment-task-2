@@ -19,6 +19,11 @@ module.exports = {
                 cpWhite2: "#EDEDED",
                 cpGrey: "#787878",
             },
+            fontSize: {
+                small: "0.7rem",
+                medium: "0.8rem",
+                large: "1.1rem",
+            },
         },
     },
     plugins: [],

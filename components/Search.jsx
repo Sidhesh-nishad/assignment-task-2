@@ -15,11 +15,11 @@ const Search = ({ handleResult }) => {
                 type="text"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
-                className="p-1 border border-gray-300 rounded-lg shadow-sm outline-none max-md:text-sm "
+                className="p-1 border border-gray-300 rounded-lg shadow-sm outline-none text-medium "
                 placeholder="Enter User Name "
             />
             <button
-                className="px-2 py-1 ml-2 text-white rounded-lg shadow-sm max-md:text-sm bg-primary"
+                className="px-2 py-1 ml-2 text-white rounded-lg shadow-sm text-medium bg-primary"
                 onClick={() => {
                     handleResult(text);
                 }}

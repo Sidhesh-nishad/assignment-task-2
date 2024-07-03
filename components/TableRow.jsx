@@ -15,7 +15,7 @@ const TableRow = ({
 
     return (
         <tr
-            className={`text-center cursor-pointer h-14 hover:bg-lightPrimary ${
+            className={`text-center cursor-pointer h-10 hover:bg-lightPrimary ${
                 isselected && selectedUserId === uid ? "bg-lightPrimary" : ""
             }`}
             onClick={() => {
@@ -33,11 +33,13 @@ const TableRow = ({
                     className="w-6 h-6 ml-4 rounded-full"
                 />
             </td>
-            <td className=" max-md:text-xs">{username}</td>
-            <td className=" max-md:text-xs">{firstName + " " + lastName}</td>
-            <td className="max-md:hidden ">{email}</td>
-            <td className="max-md:hidden max-xl:hidden ">{jobTitle}</td>
-            <td className="max-md:hidden max-xl:hidden ">
+            <td className=" text-medium">{username}</td>
+            <td className=" text-medium">{firstName + " " + lastName}</td>
+            <td className="text-medium max-md:hidden ">{email}</td>
+            <td className="text-medium max-md:hidden max-xl:hidden ">
+                {jobTitle}
+            </td>
+            <td className="text-medium max-md:hidden max-xl:hidden ">
                 {createdAt.toLocaleString().split("T")[0]}
             </td>
         </tr>

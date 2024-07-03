@@ -69,13 +69,13 @@ const Main = () => {
     return (
         <main className="grid grid-cols-5 px-5">
             <div className={`grid ${isselected ? "col-span-4" : "col-span-5"}`}>
-                <h1 className="mt-5 mb-5 text-lg font-semibold max-md:mb-3 max-md:mt-3 max-md:text-sm">
+                <h1 className="mt-5 mb-5 font-semibold text-large max-md:mb-3 max-md:mt-3 ">
                     Users Details
                 </h1>
                 <DetailCard totalUsers={data?.length} loading={isLoading} />
                 <section className="mt-5 max-md:mt-3">
                     <div className="flex gap-[30%] max-md:flex-col max-md:mb-5">
-                        <h1 className="mb-5 text-lg font-semibold max-md:mb-3 max-md:text-sm ">
+                        <h1 className="mb-5 font-semibold text-large max-md:mb-3 ">
                             All Users
                         </h1>
                         <Search handleResult={setResult} />
@@ -122,18 +122,23 @@ const Main = () => {
                                 <p>{error.message}</p>
                             </div>
                         )}
+                        {filterdData.length === 0 && (
+                            <div className="flex items-center justify-center w-full h-[23rem]">
+                                <p>No result found</p>
+                            </div>
+                        )}
                     </div>
                 </section>
             </div>
             {isselected && (
                 <div className="right-0 w-full h-screen p-3 bg-white border shadow-sm max-md:absolute">
-                    <div className="relative grid w-full col-span-1 overflow-x-auto bg-white shadow-sm lg:ml-5">
+                    <div className="relative grid w-full col-span-1 overflow-x-auto bg-white ">
                         <IoMdClose
                             className="absolute cursor-pointer top-2 right-2 "
                             onClick={() => setIsSelected(false)}
                         />
-                        <div className="flex flex-col h-screen gap-5 mt-5">
-                            <p className="text-base font-semibold">
+                        <div className="flex flex-col gap-5 mt-5">
+                            <p className="font-semibold text-large">
                                 User Detail
                             </p>
 
@@ -151,58 +156,58 @@ const Main = () => {
                             </div>
 
                             <div>
-                                <p className="text-sm font-medium max-xl:text-xs text-slate-500">
+                                <p className="font-medium text-small text-slate-500">
                                     createdAt
                                 </p>
-                                <p className="text-sm font-medium text-black max-xl:text-xs">
+                                <p className="font-medium text-black text-small ">
                                     {selectedUserData.createdAt}
                                 </p>
                             </div>
                             <div>
-                                <p className="text-sm font-medium max-xl:text-xs text-slate-500">
+                                <p className="font-medium text-small text-slate-500">
                                     username
                                 </p>
-                                <p className="text-sm font-medium text-black max-xl:text-xs">
+                                <p className="font-medium text-black text-small ">
                                     {selectedUserData.profile.username}
                                 </p>
                             </div>
                             <div>
-                                <p className="text-sm font-medium max-xl:text-xs text-slate-500">
+                                <p className="font-medium text-small text-slate-500">
                                     firstName
                                 </p>
-                                <p className="text-sm font-medium text-black max-xl:text-xs">
+                                <p className="font-medium text-black text-small ">
                                     {selectedUserData.profile.firstName}
                                 </p>
                             </div>
                             <div>
-                                <p className="text-sm font-medium max-xl:text-xs text-slate-500">
+                                <p className="font-medium text-small text-slate-500">
                                     lastName
                                 </p>
-                                <p className="text-sm font-medium text-black max-xl:text-xs">
+                                <p className="font-medium text-black text-small ">
                                     {selectedUserData.profile.lastName}
                                 </p>
                             </div>
                             <div>
-                                <p className="text-sm font-medium max-xl:text-xs text-slate-500">
+                                <p className="font-medium text-small text-slate-500">
                                     email
                                 </p>
-                                <p className="text-sm font-medium text-black max-xl:text-xs">
+                                <p className="font-medium text-black text-small ">
                                     {selectedUserData.profile.email}
                                 </p>
                             </div>
                             <div>
-                                <p className="text-sm font-medium max-xl:text-xs text-slate-500">
+                                <p className="font-medium text-small text-slate-500">
                                     Bio
                                 </p>
-                                <p className="text-sm font-medium text-black max-xl:text-xs">
+                                <p className="font-medium text-black text-small ">
                                     {selectedUserData.Bio}
                                 </p>
                             </div>
                             <div>
-                                <p className="text-sm font-medium max-xl:text-xs text-slate-500">
+                                <p className="font-medium text-small text-slate-500">
                                     jobTitle
                                 </p>
-                                <p className="text-sm font-medium text-black max-xl:text-xs">
+                                <p className="font-medium text-black text-small ">
                                     {selectedUserData.jobTitle}
                                 </p>
                             </div>
