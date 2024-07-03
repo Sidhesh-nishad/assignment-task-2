@@ -6,16 +6,13 @@ import TableRow from "./TableRow";
 import axios from "axios";
 import Loader from "./Loader";
 import { IoMdClose } from "react-icons/io";
-import Search from "./Search";
 
 const Main = () => {
     const [data, setData] = useState([]);
-    const [filterdData, setFilteredData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState();
     const [isselected, setIsSelected] = useState(false);
     const [selectedUserId, setSelectedUserId] = useState();
-    const [result, setResult] = useState("");
 
     // adding unique id
 
@@ -26,19 +23,6 @@ const Main = () => {
     const selectedUserData = data?.find(
         (userDetail) => userDetail.uid === selectedUserId
     );
-
-    useEffect(() => {
-        if (result === "") {
-            setFilteredData(data);
-        } else {
-            const filteringData = data.filter((userData) =>
-                userData.profile.username
-                    .toLowerCase()
-                    .includes(result.toLowerCase())
-            );
-            setFilteredData(filteringData);
-        }
-    }, [result, data]);
 
     useEffect(() => {
         const getdata = async () => {
@@ -65,13 +49,7 @@ const Main = () => {
                 </h1>
                 <DetailCard totalUsers={data?.length} loading={isLoading} />
                 <section className="mt-5">
-                    <div className="flex gap-[30%]">
-                        <h1 className="mb-5 text-lg font-semibold">
-                            All Users
-                        </h1>
-                        <Search handleResult={setResult} />
-                    </div>
-
+                    <h1 className="mb-5 text-lg font-semibold">All Users</h1>
                     <div className="h-[25rem]  rounded-lg bg-white shadow-sm w-full  overflow-y-scroll ">
                         <table className="w-full ">
                             <thead className="sticky top-0 h-[3rem] bg-white">
@@ -79,7 +57,7 @@ const Main = () => {
                             </thead>
                             {!isLoading && (
                                 <tbody>
-                                    {filterdData?.map((userDetails) => (
+                                    {data?.map((userDetails) => (
                                         <TableRow
                                             key={
                                                 userDetails.id +
