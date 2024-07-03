@@ -10,7 +10,7 @@ const Search = ({ handleResult }) => {
     }, [handleResult, text]);
 
     return (
-        <div>
+        <div className="max-sm:flex">
             <input
                 type="text"
                 value={text}
