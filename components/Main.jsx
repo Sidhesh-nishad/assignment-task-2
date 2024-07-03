@@ -7,6 +7,8 @@ import axios from "axios";
 import Loader from "./Loader";
 import { IoMdClose } from "react-icons/io";
 import Search from "./Search";
+import Image from "next/image";
+import userImage from "../public/user.jpg";
 
 const Main = () => {
     const [data, setData] = useState([]);
@@ -16,7 +18,9 @@ const Main = () => {
     const [isselected, setIsSelected] = useState(false);
     const [selectedUserId, setSelectedUserId] = useState();
     const [result, setResult] = useState("");
+    const [imgSrc, setImgSrc] = useState();
 
+    console.log(imgSrc);
     // adding unique id
 
     data?.map((currentUser, i) => {
@@ -26,6 +30,11 @@ const Main = () => {
     const selectedUserData = data?.find(
         (userDetail) => userDetail.uid === selectedUserId
     );
+
+    useEffect(() => {
+        setImgSrc(selectedUserData?.avatar);
+    }, [selectedUserData]);
+    // console.log(selectedUserData);
 
     useEffect(() => {
         if (result === "") {
@@ -124,6 +133,19 @@ const Main = () => {
                     />
                     <div className="flex flex-col gap-5 mt-5 ml-4">
                         <p className="text-base font-semibold">User Detail</p>
+
+                        <div>
+                            <Image
+                                src={imgSrc}
+                                onError={() => {
+                                    setImgSrc(userImage);
+                                }}
+                                alt={selectedUserData + " " + "image"}
+                                width={50}
+                                height={50}
+                                className="ml-4 rounded-full "
+                            />
+                        </div>
 
                         <div>
                             <p className="text-sm font-medium text-slate-500">

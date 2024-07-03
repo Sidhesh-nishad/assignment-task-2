@@ -1,5 +1,6 @@
 import Image from "next/image";
 import userImage from "../public/user.jpg";
+import { useEffect, useState } from "react";
 
 const TableRow = ({
     userData,
@@ -8,6 +9,7 @@ const TableRow = ({
     selectedUserId,
     isselected,
 }) => {
+    const [isImageError, setIsImageError] = useState(false);
     const { username, firstName, lastName, email } = userData.profile;
     const { createdAt, avatar, jobTitle, uid } = userData;
 
@@ -23,12 +25,13 @@ const TableRow = ({
         >
             <td>
                 <Image
-                    src={userImage}
+                    src={isImageError ? userImage : avatar}
+                    onError={() => setIsImageError(true)}
                     alt={username + " " + "image"}
                     width={24}
                     height={24}
                     className="w-6 h-6 ml-4 rounded-full"
-                ></Image>
+                />
             </td>
             <td>{username}</td>
             <td>{firstName + " " + lastName}</td>
