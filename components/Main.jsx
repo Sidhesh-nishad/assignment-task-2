@@ -113,7 +113,7 @@ const Main = () => {
                         )}
                         {!error && data.length === 0 && (
                             <div className="flex items-center justify-center w-full h-[23rem]">
-                                <p>No data Availble</p>
+                                <p>No data to show</p>
                             </div>
                         )}
 
@@ -124,7 +124,7 @@ const Main = () => {
                         )}
                         {filterdData.length === 0 && (
                             <div className="flex items-center justify-center w-full h-[23rem]">
-                                <p>No result found</p>
+                                <p>No data to show</p>
                             </div>
                         )}
                     </div>
