@@ -9,16 +9,16 @@ const TableRow = ({
     isselected,
 }) => {
     const { username, firstName, lastName, email } = userData.profile;
-    const { createdAt, avatar, jobTitle, id } = userData;
+    const { createdAt, avatar, jobTitle, uid } = userData;
 
     return (
         <tr
             className={`text-center cursor-pointer h-14 hover:bg-lightPrimary ${
-                isselected && selectedUserId === id ? "bg-lightPrimary" : ""
+                isselected && selectedUserId === uid ? "bg-lightPrimary" : ""
             }`}
             onClick={() => {
                 handleisSelected(true);
-                handleSelectedUserId(id);
+                handleSelectedUserId(uid);
             }}
         >
             <td>

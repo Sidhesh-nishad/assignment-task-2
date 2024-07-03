@@ -8,19 +8,21 @@ import Loader from "./Loader";
 import { IoMdClose } from "react-icons/io";
 
 const Main = () => {
-    const [data, setData] = useState();
+    const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState();
     const [isselected, setIsSelected] = useState(false);
     const [selectedUserId, setSelectedUserId] = useState();
-    // const [selectedUserData, setSelectedUserData] = useState();
-    console.log(isselected, selectedUserId);
+
+    // adding unique id
+
+    data?.map((currentUser, i) => {
+        return (currentUser.uid = i);
+    });
 
     const selectedUserData = data?.find(
-        (userDetail) => userDetail.id === selectedUserId
+        (userDetail) => userDetail.uid === selectedUserId
     );
-
-    console.log(selectedUserData);
 
     useEffect(() => {
         const getdata = async () => {
@@ -76,6 +78,17 @@ const Main = () => {
                         {isLoading && (
                             <div className="flex items-center justify-center w-full h-[23rem]">
                                 <Loader />
+                            </div>
+                        )}
+                        {!error && data.length === 0 && (
+                            <div className="flex items-center justify-center w-full h-[23rem]">
+                                <p>No data Availble</p>
+                            </div>
+                        )}
+
+                        {error && (
+                            <div className="flex items-center justify-center w-full h-[23rem]">
+                                <p>{error.message}</p>
                             </div>
                         )}
                     </div>
