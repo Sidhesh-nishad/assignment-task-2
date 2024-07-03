@@ -36,8 +36,8 @@ const TableRow = ({
             <td className=" max-md:text-xs">{username}</td>
             <td className=" max-md:text-xs">{firstName + " " + lastName}</td>
             <td className="max-md:hidden ">{email}</td>
-            <td className="max-md:hidden ">{jobTitle}</td>
-            <td className="max-md:hidden ">
+            <td className="max-md:hidden max-xl:hidden ">{jobTitle}</td>
+            <td className="max-md:hidden max-xl:hidden ">
                 {createdAt.toLocaleString().split("T")[0]}
             </td>
         </tr>

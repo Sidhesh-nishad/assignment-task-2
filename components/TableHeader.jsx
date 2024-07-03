@@ -12,11 +12,11 @@ const TableHeader = () => {
 
             <th className="font-medium text-gray-500 max-md:hidden">Email</th>
 
-            <th className="font-medium text-gray-500 max-md:hidden">
+            <th className="font-medium text-gray-500 max-md:hidden max-xl:hidden">
                 Job Title
             </th>
 
-            <th className="font-medium text-gray-500 max-md:hidden">
+            <th className="font-medium text-gray-500 max-md:hidden max-xl:hidden">
                 Created At
             </th>
         </tr>

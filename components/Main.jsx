@@ -126,13 +126,13 @@ const Main = () => {
                 </section>
             </div>
             {isselected && (
-                <div className="right-0 w-full h-screen p-5 bg-white border shadow-sm max-md:absolute">
-                    <div className="relative grid col-span-1 ml-5 bg-white shadow-sm">
+                <div className="right-0 w-full h-screen p-3 bg-white border shadow-sm max-md:absolute">
+                    <div className="relative grid w-full col-span-1 overflow-x-auto bg-white shadow-sm lg:ml-5">
                         <IoMdClose
                             className="absolute cursor-pointer top-2 right-2 "
                             onClick={() => setIsSelected(false)}
                         />
-                        <div className="flex flex-col gap-5 mt-5 ml-4">
+                        <div className="flex flex-col h-screen gap-5 mt-5">
                             <p className="text-base font-semibold">
                                 User Detail
                             </p>
@@ -151,58 +151,58 @@ const Main = () => {
                             </div>
 
                             <div>
-                                <p className="text-sm font-medium text-slate-500">
+                                <p className="text-sm font-medium max-xl:text-xs text-slate-500">
                                     createdAt
                                 </p>
-                                <p className="text-sm font-medium text-black">
+                                <p className="text-sm font-medium text-black max-xl:text-xs">
                                     {selectedUserData.createdAt}
                                 </p>
                             </div>
                             <div>
-                                <p className="text-sm font-medium text-slate-500">
+                                <p className="text-sm font-medium max-xl:text-xs text-slate-500">
                                     username
                                 </p>
-                                <p className="text-sm font-medium text-black">
+                                <p className="text-sm font-medium text-black max-xl:text-xs">
                                     {selectedUserData.profile.username}
                                 </p>
                             </div>
                             <div>
-                                <p className="text-sm font-medium text-slate-500">
+                                <p className="text-sm font-medium max-xl:text-xs text-slate-500">
                                     firstName
                                 </p>
-                                <p className="text-sm font-medium text-black">
+                                <p className="text-sm font-medium text-black max-xl:text-xs">
                                     {selectedUserData.profile.firstName}
                                 </p>
                             </div>
                             <div>
-                                <p className="text-sm font-medium text-slate-500">
+                                <p className="text-sm font-medium max-xl:text-xs text-slate-500">
                                     lastName
                                 </p>
-                                <p className="text-sm font-medium text-black">
+                                <p className="text-sm font-medium text-black max-xl:text-xs">
                                     {selectedUserData.profile.lastName}
                                 </p>
                             </div>
                             <div>
-                                <p className="text-sm font-medium text-slate-500">
+                                <p className="text-sm font-medium max-xl:text-xs text-slate-500">
                                     email
                                 </p>
-                                <p className="text-sm font-medium text-black">
+                                <p className="text-sm font-medium text-black max-xl:text-xs">
                                     {selectedUserData.profile.email}
                                 </p>
                             </div>
                             <div>
-                                <p className="text-sm font-medium text-slate-500">
+                                <p className="text-sm font-medium max-xl:text-xs text-slate-500">
                                     Bio
                                 </p>
-                                <p className="text-sm font-medium text-black">
+                                <p className="text-sm font-medium text-black max-xl:text-xs">
                                     {selectedUserData.Bio}
                                 </p>
                             </div>
                             <div>
-                                <p className="text-sm font-medium text-slate-500">
+                                <p className="text-sm font-medium max-xl:text-xs text-slate-500">
                                     jobTitle
                                 </p>
-                                <p className="text-sm font-medium text-black">
+                                <p className="text-sm font-medium text-black max-xl:text-xs">
                                     {selectedUserData.jobTitle}
                                 </p>
                             </div>
