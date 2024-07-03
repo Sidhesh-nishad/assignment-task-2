@@ -69,13 +69,13 @@ const Main = () => {
     return (
         <main className="grid grid-cols-5 px-5">
             <div className={`grid ${isselected ? "col-span-4" : "col-span-5"}`}>
-                <h1 className="mt-5 mb-5 text-lg font-semibold">
+                <h1 className="mt-5 mb-5 text-lg font-semibold max-md:mb-3 max-md:mt-3 max-md:text-sm">
                     Users Details
                 </h1>
                 <DetailCard totalUsers={data?.length} loading={isLoading} />
-                <section className="mt-5">
-                    <div className="flex gap-[30%]">
-                        <h1 className="mb-5 text-lg font-semibold">
+                <section className="mt-5 max-md:mt-3">
+                    <div className="flex gap-[30%] max-md:flex-col max-md:mb-5">
+                        <h1 className="mb-5 text-lg font-semibold max-md:mb-3 max-md:text-sm ">
                             All Users
                         </h1>
                         <Search handleResult={setResult} />
@@ -126,82 +126,86 @@ const Main = () => {
                 </section>
             </div>
             {isselected && (
-                <div className="relative grid col-span-1 ml-5 bg-white shadow-sm">
-                    <IoMdClose
-                        className="absolute cursor-pointer top-2 right-2 "
-                        onClick={() => setIsSelected(false)}
-                    />
-                    <div className="flex flex-col gap-5 mt-5 ml-4">
-                        <p className="text-base font-semibold">User Detail</p>
+                <div className="right-0 w-full h-screen p-5 bg-white border shadow-sm max-md:absolute">
+                    <div className="relative grid col-span-1 ml-5 bg-white shadow-sm">
+                        <IoMdClose
+                            className="absolute cursor-pointer top-2 right-2 "
+                            onClick={() => setIsSelected(false)}
+                        />
+                        <div className="flex flex-col gap-5 mt-5 ml-4">
+                            <p className="text-base font-semibold">
+                                User Detail
+                            </p>
 
-                        <div>
-                            <Image
-                                src={imgSrc}
-                                onError={() => {
-                                    setImgSrc(userImage);
-                                }}
-                                alt={selectedUserData + " " + "image"}
-                                width={50}
-                                height={50}
-                                className="ml-4 rounded-full "
-                            />
-                        </div>
+                            <div>
+                                <Image
+                                    src={imgSrc}
+                                    onError={() => {
+                                        setImgSrc(userImage);
+                                    }}
+                                    alt={selectedUserData + " " + "image"}
+                                    width={50}
+                                    height={50}
+                                    className="ml-4 rounded-full "
+                                />
+                            </div>
 
-                        <div>
-                            <p className="text-sm font-medium text-slate-500">
-                                createdAt
-                            </p>
-                            <p className="text-sm font-medium text-black">
-                                {selectedUserData.createdAt}
-                            </p>
-                        </div>
-                        <div>
-                            <p className="text-sm font-medium text-slate-500">
-                                username
-                            </p>
-                            <p className="text-sm font-medium text-black">
-                                {selectedUserData.profile.username}
-                            </p>
-                        </div>
-                        <div>
-                            <p className="text-sm font-medium text-slate-500">
-                                firstName
-                            </p>
-                            <p className="text-sm font-medium text-black">
-                                {selectedUserData.profile.firstName}
-                            </p>
-                        </div>
-                        <div>
-                            <p className="text-sm font-medium text-slate-500">
-                                lastName
-                            </p>
-                            <p className="text-sm font-medium text-black">
-                                {selectedUserData.profile.lastName}
-                            </p>
-                        </div>
-                        <div>
-                            <p className="text-sm font-medium text-slate-500">
-                                email
-                            </p>
-                            <p className="text-sm font-medium text-black">
-                                {selectedUserData.profile.email}
-                            </p>
-                        </div>
-                        <div>
-                            <p className="text-sm font-medium text-slate-500">
-                                Bio
-                            </p>
-                            <p className="text-sm font-medium text-black">
-                                {selectedUserData.Bio}
-                            </p>
-                        </div>
-                        <div>
-                            <p className="text-sm font-medium text-slate-500">
-                                jobTitle
-                            </p>
-                            <p className="text-sm font-medium text-black">
-                                {selectedUserData.jobTitle}
-                            </p>
+                            <div>
+                                <p className="text-sm font-medium text-slate-500">
+                                    createdAt
+                                </p>
+                                <p className="text-sm font-medium text-black">
+                                    {selectedUserData.createdAt}
+                                </p>
+                            </div>
+                            <div>
+                                <p className="text-sm font-medium text-slate-500">
+                                    username
+                                </p>
+                                <p className="text-sm font-medium text-black">
+                                    {selectedUserData.profile.username}
+                                </p>
+                            </div>
+                            <div>
+                                <p className="text-sm font-medium text-slate-500">
+                                    firstName
+                                </p>
+                                <p className="text-sm font-medium text-black">
+                                    {selectedUserData.profile.firstName}
+                                </p>
+                            </div>
+                            <div>
+                                <p className="text-sm font-medium text-slate-500">
+                                    lastName
+                                </p>
+                                <p className="text-sm font-medium text-black">
+                                    {selectedUserData.profile.lastName}
+                                </p>
+                            </div>
+                            <div>
+                                <p className="text-sm font-medium text-slate-500">
+                                    email
+                                </p>
+                                <p className="text-sm font-medium text-black">
+                                    {selectedUserData.profile.email}
+                                </p>
+                            </div>
+                            <div>
+                                <p className="text-sm font-medium text-slate-500">
+                                    Bio
+                                </p>
+                                <p className="text-sm font-medium text-black">
+                                    {selectedUserData.Bio}
+                                </p>
+                            </div>
+                            <div>
+                                <p className="text-sm font-medium text-slate-500">
+                                    jobTitle
+                                </p>
+                                <p className="text-sm font-medium text-black">
+                                    {selectedUserData.jobTitle}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

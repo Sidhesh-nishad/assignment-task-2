@@ -33,11 +33,13 @@ const TableRow = ({
                     className="w-6 h-6 ml-4 rounded-full"
                 />
             </td>
-            <td>{username}</td>
-            <td>{firstName + " " + lastName}</td>
-            <td>{email}</td>
-            <td>{jobTitle}</td>
-            <td>{createdAt.toLocaleString().split("T")[0]}</td>
+            <td className=" max-md:text-xs">{username}</td>
+            <td className=" max-md:text-xs">{firstName + " " + lastName}</td>
+            <td className="max-md:hidden ">{email}</td>
+            <td className="max-md:hidden ">{jobTitle}</td>
+            <td className="max-md:hidden ">
+                {createdAt.toLocaleString().split("T")[0]}
+            </td>
         </tr>
     );
 };
