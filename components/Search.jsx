@@ -15,7 +15,7 @@ const Search = ({ handleResult }) => {
                 type="text"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
-                className="py-1 pl-1 border border-gray-300 rounded-lg shadow-sm outline-none text-medium "
+                className="py-1 pl-1 border border-gray-300 rounded-lg shadow-sm outline-none max-sm:w-[60%] text-medium "
                 placeholder="Enter User Name "
             />
             <button
