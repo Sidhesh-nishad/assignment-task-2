@@ -1,4 +1,5 @@
 import { PiUserCircleLight } from "react-icons/pi";
+import Loader from "./Loader";
 
 const DetailCard = ({ totalUsers, loading }) => {
     return (
@@ -10,7 +11,9 @@ const DetailCard = ({ totalUsers, loading }) => {
                 </div>
             </div>
             {loading ? (
-                <p className=" text-medium">...loading</p>
+                <div className="flex justify-start">
+                    <Loader type="sm" />
+                </div>
             ) : (
                 <p className="text-base font-semibold text-medium">
                     {totalUsers}
